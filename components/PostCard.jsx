@@ -1,19 +1,21 @@
 import React from 'react'
 import moment from 'moment'
 import Link from 'next/link'
+import authImg from '/public/authimg.jpg';
+import Image from 'next/image';
 
 const PostCard = ({ post, excerpt }) => {
   return (
     <>
-    <div className="bg-white shadow-lg rounded-lg p-0 lg:p-8 pb-12 mb-8">
+    <div className="bg-white shadow-lg rounded-lg lg:p-8 pb-12 mb-8">
         <div className="relative overflow-hidden shadow-md mb-6">
             <img
                 src={post.featuredImage.url}
                 alt={post.title}
-                className="object-top h-full w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg"
+                className=" h-80 w-full object-cover  shadow-lg rounded-t-lg lg:rounded-lg"
             />
         </div>
-        <h1 className="transition duration-100 text-center mb-8 cursor-pointer hover:text-pink-600 text-3xl font-semibold">
+        <h1 className="transition duration-100 text-center mb-8 cursor-pointer hover:text-red-600 text-3xl font-semibold">
             <Link href={`/post/${post.slug}`}>
                 {post.title}
             </Link>
@@ -25,7 +27,7 @@ const PostCard = ({ post, excerpt }) => {
                 height="30px"
                 width="30px"
                 className="align-middle rounded-full"
-                src={post.author.photo.url}
+                src={ post.author.photo ? post.author.photo.url : "/authimg.jpg" }
                  />
                  <p className="inline align-middle text-gray-700 ml-2 text-lg">{post.author.name}</p>
             </div>

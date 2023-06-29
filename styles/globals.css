@@ -61,3 +61,28 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.customLink {
+  @apply inline-block relative bg-clip-text text-transparent transition-all duration-300 ease-in-out;
+  background-image: linear-gradient(to right, #E84545, #E84545 50%, #fff 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  padding: 5px 0;
+}
+
+.customLink::before {
+  @apply block absolute bottom-[-3px] left-0 bg-red-500;
+  content: '';
+  width: 0;
+  height: 3px;
+  transition: all 0.3s ease-in-out;
+}
+
+.customLink:hover {
+  background-position: 0;
+  cursor: pointer;
+}
+
+.customLink:hover::before {
+  width:100%;
+}
