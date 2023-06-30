@@ -11,8 +11,7 @@ const PostWidget = ({ categories, slug }) => {
 
   useEffect(() => {
     if (slug) {
-      getSimilarPosts(categories, slug)
-      .then((result) => {
+      getSimilarPosts(categories, slug).then((result) => {
         setRelatedPosts(result);
       });
     } else {
@@ -24,15 +23,15 @@ const PostWidget = ({ categories, slug }) => {
 
   return (
     <div className="bg-white shadow-lg rounded-lg p-8 pb-12 mb-8">
-      <h3 className="text-xl mb-8 text-blue-500 font-semibold border-b pb-4">{slug ? 'Related Posts' : 'Recent Posts'}</h3>
+      <h3 className="text-xl mb-8 font-semibold border-b pb-4">{slug ? 'Related Posts' : 'Recent Posts'}</h3>
       {relatedPosts.map((post, index) => (
         <div key={index} className="flex items-center w-full mb-4">
           <div className="w-16 flex-none">
-            <img
-            //   loader={grpahCMSImageLoader}
+            <Image
+              // loader={grpahCMSImageLoader}
               alt={post.title}
-              height="60px"
-              width="60px"
+              height="60"
+              width="60"
               unoptimized
               className="align-middle rounded-full"
               src={post.featuredImage.url}

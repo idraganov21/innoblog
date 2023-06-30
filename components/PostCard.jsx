@@ -1,8 +1,6 @@
 import React from 'react'
 import moment from 'moment'
 import Link from 'next/link'
-import authImg from '/public/authimg.jpg';
-import Image from 'next/image';
 
 const PostCard = ({ post, excerpt }) => {
   return (
