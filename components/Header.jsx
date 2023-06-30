@@ -25,7 +25,6 @@ const Header = () => {
                     {categories.map((category) => (
                         <Link key={category.slug} href={`/category/${category.slug}`}>
                             <span className="md:float-right mt-2 align-middle text-transform: uppercase text-white ml-4 font-semibold cursor-pointer transition-all duration-300 ease-in-out customLink">
-
                                 {category.name}
                             </span>
                         </Link>
