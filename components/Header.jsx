@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getCategories } from '@/services'
+import  innoLogo  from '../public/innologo.svg'
+import Image from 'next/image';
 
 
 const Header = () => {
     const [categories, setCategories] = useState([]);
+    console.log(innoLogo);
 
     useEffect(() => {
         getCategories()
@@ -17,7 +20,7 @@ const Header = () => {
                 <div className="md:float-left block">
                     <Link href="/">
                         <span className="cursor-pointer font-bold text-4xl blogTitle">
-                            InnoBlog
+                            <Image src={innoLogo.src} width={100} height={500} className="h-30" alt="InnoBlog" />
                         </span>
                     </Link>
                 </div>

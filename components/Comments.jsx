@@ -15,7 +15,7 @@ const Comments = ({ slug }) => {
     <div>
       <>
         {comments.length > 0 && (
-          <div className='bg-white shadow-lg rounded-lg p-8 pb-12 mb-8'>
+          <div className='bg-gray-custom shadow-lg rounded-lg p-8 pb-12 mb-8'>
             <h3 className='text-xl mb-8 font-semibold border-b pb-4'>
               {comments.length}
               {' '}
